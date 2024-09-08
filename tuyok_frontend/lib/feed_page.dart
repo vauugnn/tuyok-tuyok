@@ -4,6 +4,8 @@ import 'package:tuyok_mobile/map_page.dart'; // Import your MapPage
 import 'package:tuyok_mobile/profile_page.dart'; // Import your ProfilePage
 
 class FeedPage extends StatelessWidget {
+  const FeedPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

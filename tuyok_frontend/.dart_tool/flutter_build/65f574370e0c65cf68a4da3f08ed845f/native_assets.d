@@ -1,0 +1,1 @@
+ /home/vauugnn/projects/tuyok/tuyok_frontend/.dart_tool/flutter_build/65f574370e0c65cf68a4da3f08ed845f/native_assets.yaml: 

@@ -1,33 +1,17 @@
-def calculate_fare():
-    type_of_vehicle = input("What type of vehicle are you on (jeep (1)/van (2): ")
-    distance = (int(input("how far is your destination: ")))
-    distance2 = float(distance)
-    discount = input("Are you a student/PWD/senior citizen (y/n): ")
-    base_fare = 13
-    van_fare = 15
-    km_fare = 1.8
+from flask import Flask, request, jsonify
+from fare_calculator import calculate_fare
 
-    if type_of_vehicle == "1":
-        fare = base_fare
-    
-    elif type_of_vehicle == "2":
-        base_fare = van_fare
-    
-    else:
-        print("Invalid input")
-        return 
-    
-    if distance2 <= 4:
-        fare = base_fare
-    else:
-        fare = base_fare + (distance2 - 4) * km_fare
+app = Flask(__name__)
 
-    if discount.lower() == "y":  # Check for "yes" in any case
-        discount_amount = fare * 0.2  # Calculate 20% discount
-        fare -= discount_amount  # Apply the discount
-        print("Discount applied: ₱", discount_amount)
+@app.route('/calculate_fare', methods=['POST'])
+def calculate_fare_route():
+    data = request.get_json()
+    vehicle_type = data['vehicle_type']
+    distance = float(data['distance'])
+    is_discount = data['is_discount']
 
+    fare = calculate_fare(vehicle_type, distance, is_discount)
+    return jsonify({'fare': float(fare)})
 
-    print("Your fare is: ₱", int(fare))
-
-calculate_fare()
+if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=5000)

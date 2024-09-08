@@ -4,6 +4,8 @@ import 'package:tuyok_mobile/sign_up_page.dart';
 import 'package:tuyok_mobile/map_page.dart';
 
 class SignInPage extends StatelessWidget {
+  const SignInPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,8 +39,8 @@ class SignInPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 24.0),
-                Center(
+                const SizedBox(height: 24.0),
+                const Center(
                   child: Text(
                     'Sign In',
                     style: TextStyle(
@@ -48,15 +50,15 @@ class SignInPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 24.0),
-                TextField(
+                const SizedBox(height: 24.0),
+                const TextField(
                   decoration: InputDecoration(
                     labelText: 'Email',
                     border: OutlineInputBorder(),
                   ),
                 ),
-                SizedBox(height: 16.0),
-                TextField(
+                const SizedBox(height: 16.0),
+                const TextField(
                   obscureText: true,
                   decoration: InputDecoration(
                     labelText: 'Password',
@@ -64,7 +66,7 @@ class SignInPage extends StatelessWidget {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                SizedBox(height: 24.0),
+                const SizedBox(height: 24.0),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -77,21 +79,21 @@ class SignInPage extends StatelessWidget {
                     },
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.orange),
+                          WidgetStateProperty.all<Color>(Colors.orange),
                       foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
-                      padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.symmetric(vertical: 16.0),
+                          WidgetStateProperty.all<Color>(Colors.white),
+                      padding: WidgetStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.symmetric(vertical: 16.0),
                       ),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(32.0),
                         ),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Sign In',
-                      style: const TextStyle(fontSize: 18.0),
+                      style: TextStyle(fontSize: 18.0),
                     ),
                   ),
                 ),

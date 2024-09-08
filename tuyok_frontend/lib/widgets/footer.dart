@@ -4,11 +4,10 @@ class Footer extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
 
-  const Footer({
-    super.key,
+  const Footer({Key? key, 
     required this.currentIndex,
     required this.onTap,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class Footer extends StatelessWidget {
       showSelectedLabels: true,
       showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
-      items: [
+      items: const [
         BottomNavigationBarItem(icon: Icon(Icons.location_on), label: 'Map'),
         BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Feed'),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
