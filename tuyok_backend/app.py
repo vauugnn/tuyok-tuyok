@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from fare_calculator import calculate_fare
 
 app = Flask(__name__)
+CORS(app, resources={r"/calculate_fare": {"origins": "http://localhost:3000"}})
 
 @app.route('/calculate_fare', methods=['POST'])
 def calculate_fare_route():
